@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> AluraGeek </title>
+</head>
+
+<body>
+    <header class="header">
+            <h1 class="titulo__header"> AluraGeek </h1>
+            <img class="imagem__header" src="./imgs/logo-shadow.png">
+    </header>
+
+    <main>
+        <section class="produtos">
+            <div class="produtos__container">
+                <h1 class="titulo__produtos"> Meus Produtos </h1>
+
+                <div class="produtos__grid" id="produtos__grid"></div>
+            </div>
+        </section>
+
+        <section class="formulario">
+            <h1 class="titulo__formulario"> Adicionar novos Produtos </h1>
+            
+            <form class="formulario__layout" id="formularioForm" method="POST">
+
+                <input class="input-formulario" type="text" id="nome" name="nome" placeholder="Nome do Produto" required>
+                <input class="input-formulario" type="text" id="preco" name="price" placeholder="Preço" required>
+                <input class="input-formulario" type="file" id="imagem" name="image" accept="image/*" required>
+
+                <div class="botoes">
+                    <button class="botao__add" id="add" type="button"> Adicionar </button>
+                    <button class="botao__del" id="clear" type="reset"> Limpar </button>
+                </div>
+            </form>
+        </section>
+
+        <img class="background" src="./imgs/background-shadow.jpg">
+    </main>
+
+    <footer class="rodape">
+        <a class="rodape__link" href="https://github.com/Warayilchan">
+            <p class="rodape__paragrafo"> Desenvolvido por Warayilchan </p>
+        </a>
+    </footer>
+
+    <script src="main.js" defer></script>
+</body>
+</html>

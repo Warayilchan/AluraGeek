@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&display=swap');
+
+:root {
+        --cor-um: #000000;
+        --cor-dois: #8F0000;
+        --cor-tres: #E50000;
+
+        --fonte-titulo_e_preco: "Irish Grover", serif;
+        --fonte-rodape_e_botao: "Inter", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: var(--cor-dois);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.titulo__header {
+    font-family: var(--fonte-titulo_e_preco);
+    color: var(--cor-um);
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.imagem__header {
+    width: 46px;
+    height: 37px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.produtos, .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+    height: auto;
+}
+
+.produtos {
+    width: 60%;
+    padding-bottom: 150px;
+}
+
+.produtos__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.titulo__produtos {
+    text-align: center;
+    font-family: var(--fonte-titulo_e_preco);
+    font-weight: 400;
+    font-size: 2.8rem;
+    -webkit-text-stroke: 2px var(--cor-dois);;
+    color: var(--cor-um);
+    padding-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.produtos__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 50vh;
+    max-height: 50vh;
+    overflow: auto;
+    gap: 30px;
+    width: 100%;
+    padding-right: 80px;
+}
+
+.card {
+    background-color: var(--cor-dois);
+    border: 2px solid var(--cor-um);
+    border-radius: 15px;
+    width: 200px;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card__img {
+    width: 100%;
+    height: 80%;
+    max-height: 125px;
+    object-fit: cover;
+}
+
+.card__paragrafo--nome {
+    font-family: var(--fonte-titulo_e_preco);
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-align: left;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    width: calc(100% - 20px);
+    margin-top: 10px;
+    width: 100%;
+}
+
+.card__paragrafo--preco {
+    font-family: var(--fonte-titulo_e_preco);
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-top: auto;
+    text-align: left;
+    width: 100%;
+}
+
+.card__img--lixeira {
+    width: 20px;
+    height: 24px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.formulario {
+    width: 40%;
+    padding-bottom: 100px;
+}
+
+.titulo__formulario {
+    font-family: var(--fonte-titulo_e_preco);
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: var(--cor-um);
+    -webkit-text-stroke: 2px var(--cor-dois);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario__layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.input-formulario {
+    width: 60%;
+    padding: 25px;
+    border: 2px solid var(--cor-dois);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: var(--cor-dois);
+    font-family: var(--fonte-rodape_e_botao);
+}
+
+.input-formulario::placeholder {
+    color: var(--cor-dois);
+    opacity: 1;
+    font-family: var(--fonte-rodape_e_botao);
+    font-size: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#imagem {
+    width: 60%;
+    padding: 25px;
+    border: 2px solid var(--cor-dois);
+    color: var(--cor-dois);
+    font-family: var(--fonte-rodape_e_botao);
+    cursor: pointer;
+}
+
+#imagem::file-selector-button {
+    border: 2px solid var(--cor-dois);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+    font-family: var(--fonte-rodape_e_botao);
+    color: var(--cor-dois);
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 55px;
+}
+
+.botao__add {
+    width: 200px;
+    height: 60px;
+    background-color: var(--cor-um);
+    font-family: var(--fonte-rodape_e_botao);
+    font-weight: 400;
+    font-weight: bold;
+    color: var(--cor-dois);
+    border: 2px solid var(--cor-dois);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.botao__del {
+    width: 200px;
+    height: 60px;
+    background-color: var(--cor-dois);
+    font-family: var(--fonte-rodape_e_botao);
+    font-weight: 400;
+    font-weight: bold;
+    color: var(--cor-um);
+    border: 2px solid var(--cor-um);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.botao__add:hover {
+    background-color: var(--cor-dois);
+    color: var(--cor-um);
+}
+
+.botao__del:hover {
+    background-color: var(--cor-um);
+    color: var(--cor-dois);
+}
+
+.rodape {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--cor-um);
+    color: var(--cor-dois);
+    font-family: var(--fonte-rodape_e_botao);
+    font-weight: 400;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.rodape__link {
+    text-decoration: none;
+    color: var(--cor-dois);
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
