@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "server": "json-server --watch ./database/db.json",
+    "vercel-build": "json-server --watch ./database/db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
