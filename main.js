@@ -1,7 +1,9 @@
+const apiUrl = process.env.API_URL || "http://localhost:3000/produtos";
+
 quantidade = 0;
 
 async function listaProdutos () {
-    const conexao = await fetch("http://localhost:3000/produtos");
+    const conexao = await fetch(apiUrl);
     const valores = await conexao.json()
     console.log(valores)
     
@@ -56,7 +58,7 @@ async function addProdutos(nome, preco, imagem) {
         imagem: await imageToBase64(imagem)
     }
 
-    try {const requisito = await fetch("http://localhost:3000/produtos", {
+    try {const requisito = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -99,7 +101,7 @@ async function removerProduto(id) {
     if (window.confirm("Você tem certeza que quer excluir o produto?")) {
 
     try {
-        const conexao = await fetch("http://localhost:3000/produtos/" + id, {
+        const conexao = await fetch(`${apiUrl}/${id}`, {
             method: 'DELETE'
         });
 
