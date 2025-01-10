@@ -299,3 +299,77 @@ input::-webkit-inner-spin-button {
     object-fit: cover;
     z-index: -1;
 }
+
+@media (max-width: 768px) {
+    body, html {
+        height: 100%;
+        overflow: auto;
+    }
+    
+    main {
+        min-height: calc(100vh - 120px);
+        padding-bottom: 140px;
+        overflow: visible;
+        position: relative;
+        flex-direction: column;
+        padding: 10px;
+        height: auto; 
+    }
+
+    .formulario {
+        order: 1; 
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    .titulo__formulario {
+        margin-bottom: 5px;
+    }
+
+    .formulario__layout {
+        gap: 30px;
+    }
+
+    .input-formulario {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .botoes {
+        gap: 108px;
+    }
+
+    .botao__add,
+    .botao__del {
+        width: 120px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+
+    .formulario {
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    #imagem {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .produtos {
+        order: 2;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .produtos__grid {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        max-height: none;
+        gap: 20px;
+        padding-right: 0;
+    }
+}
