@@ -1,6 +1,6 @@
 let API_BASE_URL = "http://localhost:3000"; 
 
-if (process.env.NODE_ENV === 'production') {
+if (window.location.hostname === 'alura-geek-sigma-nine.vercel.app') {
     API_BASE_URL = "https://alura-geek-sigma-nine.vercel.app/";
 }
 
