@@ -1,7 +1,10 @@
-quantidade = 0;
+import { API_BASE_URL } from './config.js';
+console.log("Base URL:", API_BASE_URL);
+
+let quantidade = 0;
 
 async function listaProdutos () {
-    const conexao = await fetch("http://localhost:3000/produtos");
+    const conexao = await fetch(`${API_BASE_URL}/produtos`);
     const valores = await conexao.json()
     console.log(valores)
     
@@ -56,7 +59,7 @@ async function addProdutos(nome, preco, imagem) {
         imagem: await imageToBase64(imagem)
     }
 
-    try {const requisito = await fetch("http://localhost:3000/produtos", {
+    try {const requisito = await fetch(`${API_BASE_URL}/produtos`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -99,7 +102,7 @@ async function removerProduto(id) {
     if (window.confirm("Você tem certeza que quer excluir o produto?")) {
 
     try {
-        const conexao = await fetch("http://localhost:3000/produtos/" + id, {
+        const conexao = await fetch(`${API_BASE_URL}/produtos/${id}`, {
             method: 'DELETE'
         });
 
