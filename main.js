@@ -11,6 +11,8 @@ async function listaProdutos () {
     quantidade = valores.length;
     console.log(quantidade)
 
+    document.getElementById('produtos__grid').innerHTML = '';
+
     valores.forEach(item => {
         var novoCard = document.createElement('div');
         novoCard.classList.add('card');
@@ -67,11 +69,8 @@ async function addProdutos(nome, preco, imagem) {
         body: JSON.stringify(produto)
       }) 
       console.log(requisito)
-
       listaProdutos();
-    } 
-    
-    catch(error) {
+    } catch(error) {
         console.log(error)
     }
 };
@@ -101,6 +100,8 @@ document.querySelector('#add').addEventListener('click', function (event) {
 async function removerProduto(id) {
     if (window.confirm("Você tem certeza que quer excluir o produto?")) {
 
+        console.log("ID do produto que será excluído:", id);
+        
     try {
         const conexao = await fetch(`${API_BASE_URL}/produtos/${id}`, {
             method: 'DELETE'
